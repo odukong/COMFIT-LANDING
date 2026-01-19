@@ -1,9 +1,5 @@
 import { useRef } from "react";
-
-import { CHARACTER, FLOAT_IMG, KEY } from "@/shared/assets/images";
-import useDevice from "@/shared/model/use-device";
-
-import * as styles from "./landing-page.css";
+import ReactGA from "react-ga4";
 
 import {
   LandingCard,
@@ -13,6 +9,10 @@ import {
   AlertModal,
 } from "@/features/landing";
 import { LANDING_CARD_ITEMS } from "@/features/landing/config/landing-card.constant";
+import { CHARACTER, FLOAT_IMG, KEY } from "@/shared/assets/images";
+import useDevice from "@/shared/model/use-device";
+
+import * as styles from "./landing-page.css";
 
 const LandingPage = () => {
   const { isMobile } = useDevice();
@@ -20,6 +20,11 @@ const LandingPage = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const handleModal = () => {
+    ReactGA.event({
+      category: "Button",
+      action: "Click Button",
+      label: "Click Service Button", // 어떤 버튼 요소인지 구별
+    });
     modalRef.current?.showModal();
   };
 
