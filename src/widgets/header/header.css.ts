@@ -2,7 +2,6 @@ import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
 import { themeVars } from "@/app/styles";
-
 import { screen } from "@/shared/styles/tokens/screen.css";
 
 const flexCenter = {
@@ -25,7 +24,7 @@ export const headerLayout = style({
   ...screen.mobile({
     position: "relative",
     height: themeVars.height.mobile_header,
-    padding: "5.8rem 0 1.1rem 1.6rem",
+    padding: "1.6rem 0 1.1rem 1.6rem",
   }),
 });
 
